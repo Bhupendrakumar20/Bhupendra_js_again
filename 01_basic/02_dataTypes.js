@@ -7,7 +7,7 @@
 
 // In JS, we have 7 primitive data types and 1 non-primitive data type.
 // Primitive data types are immutable, meaning their values cannot be changed once created.
-// Non-primitive data types are mutable, meaning their values can be changed.
+// Non-primitive (reference type) data types are mutable, meaning their values can be changed.
 
 
 // Primitive data types are:
@@ -51,3 +51,23 @@ console.log(typeof new WeakSet()); //object (weakset is a special type of object
 console.log(typeof new Array()); //object (array is a special type of object)
 console.log(typeof new Object()); //object (object is a special type of object)
 
+//non premetieve data type 
+//array:
+const arr = [1, 2, 3, 4, 5];
+console.log(arr); // [1, 2, 3, 4, 5]
+console.log(arr[0]); // 1
+
+//object:
+const obj = { name: "John", age: 30 };
+console.log(obj); // { name: "John", age: 30 }
+console.log(obj.name); // John
+console.log(obj["age"]); // 30
+console.log(obj["name"]); // John
+
+//fucntion:
+function add(a, b) {
+    return a + b;
+}
+console.log(add(2, 3)); // 5
+console.log(typeof add); // function
+console.log(add instanceof Function); // true
