@@ -36,16 +36,20 @@ greet4("David"); // Output: Hello, David!
 
 
 
-// // function with rest parameters
-// function greet5(...names) {
-//     for (let name of names) {
-//         console.log("Hello, " + name + "!");
-//     }
-// }
+// function with rest parameters
+function greet5(...names) {
+    for (let name of names) {
+        console.log("Hello, " + name + "!");
+    }
+}
+greet5("Eve", "Frank", "Grace"); // Output: Hello, Eve! Hello, Frank! Hello, Grace!
+// // function with rest parameters and arrow function
 
 
-// // function with spread operator
-// function greet6(...names) {
-//     const greeting = names.map(name => "Hello, " + name + "!").join(" ");
-//     console.log(greeting);
-// }
+
+
+// function with spread operator
+function greet6(...names) {
+    const greeting = names.map(name => "Hello, " + name + "!").join(" ");
+    console.log(greeting);
+}
