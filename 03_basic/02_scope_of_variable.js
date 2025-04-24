@@ -122,3 +122,18 @@ dynamicScope(); // Call the outer function to see the output
 // Note: In JavaScript, dynamic scoping is not used, and all variables are lexically scoped. This means that the scope of a variable is determined by its position in the source code, not by the call stack.
 // This is a key difference between dynamic scoping and lexical scoping. In dynamic scoping, the scope of a variable is determined by the call stack, while in lexical scoping, the scope of a variable is determined by its position in the source code.
 // In JavaScript, all variables are lexically scoped, meaning that they can only be accessed from their own scope and the scope of their parent functions. This is a key feature of JavaScript and helps to create more predictable and maintainable code.
+
+// 7. Module scope
+// Module scope refers to the scope of variables that are defined within a module. In JavaScript, modules are files that contain code that can be imported and exported. Variables declared within a module are only accessible within that module and cannot be accessed from outside.
+    // Example of module scope
+    // In this example, we will create a module that exports a function and a variable.
+    // module.js
+    export const moduleVar = "I am a module variable"; // Module scope
+    export function moduleFunction() {
+        console.log(moduleVar); // Output: I am a module variable
+    }
+    // main.js
+    import { moduleVar, moduleFunction } from "./module.js"; // Import the module
+    console.log(moduleVar); // Output: I am a module variable
+    moduleFunction(); // Call the function to see the output
+    // Output: I am a module variable
