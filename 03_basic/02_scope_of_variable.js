@@ -137,3 +137,25 @@ dynamicScope(); // Call the outer function to see the output
     console.log(moduleVar); // Output: I am a module variable
     moduleFunction(); // Call the function to see the output
     // Output: I am a module variable
+
+
+
+    // NOTE :
+    //if you declare a function and store it in a variable, the function will be hoisted to the top of the scope. This means that you can call the function before it is declared in the code. However, if you declare a variable and store a value in it, the variable will not be hoisted to the top of the scope. 
+    // This means that you cannot access the variable before it is declared in the code.
+
+
+    // LIKEWISE :
+    //  a = function hoistedFunction() {
+    // return("I am a hoisted function"); // Output: I am a hoisted function
+    // }
+    // console.log(a()); // Output: I am a hoisted function //this is good 
+    //this is good 
+
+
+    //print before declaration
+    // console.log(b)
+    // b = function second_hoistedFunction() {
+    // return("I am a hoisted function"); // Output: I am a hoisted function
+    // }    
+    // Error: Cannot access 'b' before initialization
