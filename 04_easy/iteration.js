@@ -105,5 +105,4 @@ while (j < 5) {
 // In this example, the while loop starts with j = 0 and continues to execute as long as j is less than 5. The code block is executed
 // as long as the condition is true. The while loop is useful when you want to execute a code block repeatedly until a certain condition is met.
 // The while loop is often used when the number of iterations is not known in advance, and you want to keep executing the code block until a certain condition is met.
-
-
+// The while loop is a fundamental control flow statement in JavaScript and is widely used in various programming scenarios.
