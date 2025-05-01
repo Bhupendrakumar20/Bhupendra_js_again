@@ -107,3 +107,4 @@ while (j < 5) {
 // The while loop is often used when the number of iterations is not known in advance, and you want to keep executing the code block until a certain condition is met.
 // The while loop is a fundamental control flow statement in JavaScript and is widely used in various programming scenarios.
 // It is important to ensure that the condition will eventually become false, otherwise, the loop will run indefinitely and may cause the program
+// to crash or hang. To avoid infinite loops, you can use a counter variable or other mechanisms to ensure that the loop will eventually terminate.
