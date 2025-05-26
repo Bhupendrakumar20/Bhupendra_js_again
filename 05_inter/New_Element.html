@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation Examples</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="main-heading">DOM Manipulation Example</h1>
+
+  <div id="container">
+    <p class="text">This is the first paragraph.</p>
+    <p class="text">This is the second paragraph.</p>
+    <button id="add-btn">Add Paragraph</button>
+    <button id="style-btn">Highlight Paragraphs</button>
+  </div>
+
+  <ul id="item-list"></ul>
+
+  <script>
+    // 1. getElementById: Get element using its ID
+    const heading = document.getElementById('main-heading');
+    heading.style.color = 'blue';
+    heading.textContent = 'Updated DOM Example';
+
+    // 2. getElementsByClassName: Get all elements with the class "text"
+    const paragraphs = document.getElementsByClassName('text');
+    console.log('All paragraphs with class "text":', paragraphs);
+
+    // Change the color of all paragraphs with class "text"
+    for (let para of paragraphs) {
+      para.style.fontSize = '18px';
+    }
+
+    // 3. getElementsByTagName: Get all <p> elements
+    const allParagraphs = document.getElementsByTagName('p');
+    console.log('All <p> elements:', allParagraphs);
+
+    // 4. querySelector: Selects the first matching element
+    const firstPara = document.querySelector('.text');
+    firstPara.style.color = 'green';
+
+    // 5. querySelectorAll: Selects all matching elements
+    const allTextParas = document.querySelectorAll('.text');
+    allTextParas.forEach(p => p.style.marginBottom = '10px');
+
+    // 6. createElement + appendChild: Dynamically add list items
+    const items = ['Item A', 'Item B', 'Item C'];
+    const itemList = document.getElementById('item-list');
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      itemList.appendChild(li);
+    });
+
+    // 7. Event handling - adding a paragraph dynamically
+    document.getElementById('add-btn').addEventListener('click', () => {
+      const newPara = document.createElement('p');
+      newPara.textContent = 'A new paragraph was added dynamically!';
+      newPara.classList.add('text');
+      document.getElementById('container').appendChild(newPara);
+    });
+
+    // 8. classList - Add a class dynamically
+    document.getElementById('style-btn').onclick = () => {
+      const allParas = document.querySelectorAll('.text');
+      allParas.forEach(p => {
+        p.classList.add('highlight');
+      });
+    };
+
+    // 9. innerHTML: Set HTML content directly (use with caution!)
+    itemList.innerHTML += '<li><strong>Item D (added with innerHTML)</strong></li>';
+
+    // 10. textContent vs innerHTML:
+    const demoPara = document.createElement('p');
+    demoPara.innerHTML = 'This has <strong>bold</strong> text using innerHTML.';
+    document.body.appendChild(demoPara);
+
+    const plainPara = document.createElement('p');
+    plainPara.textContent = 'This has <strong>bold</strong> text using textContent.';
+    document.body.appendChild(plainPara);
+  </script>
+</body>
+</html>
+<!-- This HTML document demonstrates various DOM manipulation techniques using JavaScript. -->
+<!-- It includes examples of selecting elements, modifying styles, adding new elements, and handling events. -->
+<!-- The script section contains comments explaining each operation performed on the DOM. -->
+<!-- The document is structured with a heading, a container for paragraphs, buttons for interaction, and a list for dynamically added items. -->
+<!-- The script also includes examples of using innerHTML and textContent to manipulate the content of elements. -->
+<!-- The document is styled with a simple CSS class for highlighting elements. -->
+<!-- The script is designed to be interactive, allowing users to add new paragraphs and highlight existing ones by clicking buttons. -->
+<!-- The document is ready to be tested in a web browser to see the DOM manipulation in action. -->
+<!-- The document is structured to provide a clear and practical demonstration of DOM manipulation techniques. -->
+<!-- The document is designed to be educational, showcasing how to work with the DOM in a web environment. -->
+<!-- The document is self-contained, with all necessary elements and scripts included for demonstration purposes. -->
+
+
+
+<!-- nodelist vs array list -->
+<!-- // the nodelist is a collection of nodes, while an array list is a collection of items that can be manipulated using array methods.
+// nodelist is a live collection, meaning it updates automatically when the DOM changes, while an array list is static and does not update automatically.
+
+
+// Example of using nodelist vs array list
+const nodeList = document.querySelectorAll('.text');
+const arrayList = Array.from(nodeList);
+
+// Now you can use array methods on arrayList
+
+// Example of using forEach on nodelist
+nodeList.forEach(node => {
+  console.log(node.textContent);
+});
+
+// Example of using forEach on array list
+arrayList.forEach(item => {
+  console.log(item.textContent);
+}); -->
+
+
+<!-- 
+//children vs childNodes
+// The children property returns a live HTMLCollection of child elements, while childNodes returns a NodeList of all child nodes, including text nodes and comment nodes.
+// Example of using children vs childNodes
+
+const container = document.getElementById('container');
+const childElements = container.children; // HTMLCollection of child elements
+const childNodes = container.childNodes; // NodeList of all child nodes
+console.log('Child elements:', childElements);
+console.log('Child nodes:', childNodes);
+
+
+// Example of iterating over child elements
+for (let child of childElements) {
+  console.log('Child element:', child);
+}
+// Example of iterating over child nodes
+for (let node of childNodes) {
+  console.log('Child node:', node);
+} -->
+
