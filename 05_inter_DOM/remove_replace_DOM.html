@@ -1,0 +1,52 @@
+//edit the document
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove and Replace DOM Elements</title>
+    <style>
+        .highlight {
+        background-color: yellow;
+        font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+  <h1 id="main-heading">DOM Manipulation Example</h1>
+  
+  <div id="container">
+    <p class="text">This is the first paragraph.</p>
+    <p class="text">This is the second paragraph.</p>
+    <button id="remove-btn">Remove First Paragraph</button>
+    <button id="replace-btn">Replace Second Paragraph</button>
+  </div>
+
+  <script>
+    // Remove the first paragraph
+    document.getElementById('remove-btn').addEventListener('click', function() {
+      const firstParagraph = document.querySelector('.text');
+      if (firstParagraph) {
+        firstParagraph.remove();
+      }
+    });
+
+    // Replace the second paragraph with a new one
+    document.getElementById('replace-btn').addEventListener('click', function() {
+      const secondParagraph = document.querySelectorAll('.text')[1];
+      if (secondParagraph) {
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph replacing the second one.';
+        secondParagraph.replaceWith(newParagraph);
+      }
+    });
+
+    //EDiting the document
+    document.querySelector('h1').textContent = 'Updated DOM Example';
+    document.querySelector('h1').style.color = 'blue';
+    document.querySelectorAll('.text').forEach(p => p.style.color = 'green');
+    document.querySelectorAll('.text').forEach(p => p.style.fontSize = '18px');
+  </script>
+</body>
+</html>
+<!--     // 7. remove: Remove an element from the DOM
+ -->
