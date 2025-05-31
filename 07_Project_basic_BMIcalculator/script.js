@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent form from submitting
 
-    const height = parseFloat(heightInput.value);
+    const height = parseFloat(heightInput.value);//convert input to float
     const weight = parseFloat(weightInput.value);
 
-    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-      results.innerHTML = `<p style="color: red;">Please enter valid height and weight values.</p>`;
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {// Validate input
+      results.innerHTML = `<p style="color: red;">Please enter valid height and weight values.</p>`;//innerHTML to display error message if any input is invalid
       return;
     }
 
