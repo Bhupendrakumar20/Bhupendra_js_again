@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Events Demo</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .box { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+    input, button, textarea, select { margin: 5px 0; display: block; }
+    #dropZone { width: 200px; height: 100px; border: 2px dashed #999; line-height: 100px; text-align: center; margin-top: 10px; }
+    #dragItem { width: 100px; height: 30px; background: coral; cursor: move; margin-top: 10px; text-align: center; line-height: 30px; }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Events Demo</h1>
+
+  <!-- Mouse Events -->
+  <div class="box" id="mouseBox">Mouse Events (Click Me)</div>
+
+  <!-- Keyboard Events -->
+  <input type="text" id="keyboardInput" placeholder="Type here...">
+
+  <!-- Form Events -->
+  <form id="demoForm">
+    <input type="text" name="name" placeholder="Enter name" required>
+    <select name="city">
+      <option value="">Select city</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Mumbai">Mumbai</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Clipboard Events -->
+  <textarea id="clipboardArea">Copy, cut or paste here</textarea>
+
+  <!-- Window Events -->
+  <div class="box">Resize window, scroll page, or reload to see events in console</div>
+
+  <!-- Touch Events -->
+  <div class="box" id="touchBox">Touch Here (on mobile)</div>
+
+  <!-- Drag and Drop Events -->
+  <div id="dragItem" draggable="true">Drag Me</div>
+  <div id="dropZone">Drop Here</div>
+
+  <!-- Media Events -->
+  <video id="video" width="620" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Focus Events -->
+  <input type="text" id="focusInput" placeholder="Focus on me">
+
+  <!-- Animation / Transition Events -->
+  <div id="animateBox" class="box" style="transition: all 0.5s; width: 100px; background: lightblue;">Hover Me</div>
+
+  <script>
+    // Mouse Events
+    const mouseBox = document.getElementById("mouseBox");
+    mouseBox.addEventListener("click", () => alert("Clicked!"));
+    mouseBox.addEventListener("dblclick", () => console.log("Double Clicked"));
+    mouseBox.addEventListener("contextmenu", (e) => { e.preventDefault(); console.log("Right Clicked"); });
+
+    // Keyboard Events
+    const keyboardInput = document.getElementById("keyboardInput");
+    keyboardInput.addEventListener("keydown", (e) => console.log("Key Down:", e.key));
+    keyboardInput.addEventListener("keyup", (e) => console.log("Key Up:", e.key));
+
+    // Form Events
+    const form = document.getElementById("demoForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      console.log("Form Submitted");
+    });
+    form.elements.name.addEventListener("input", () => console.log("Input changed"));
+    form.elements.city.addEventListener("change", () => console.log("City selected"));
+
+    // Clipboard Events
+    const clip = document.getElementById("clipboardArea");
+    clip.addEventListener("copy", () => console.log("Copied"));
+    clip.addEventListener("cut", () => console.log("Cut"));
+    clip.addEventListener("paste", () => console.log("Pasted"));
+
+    // Window Events
+    window.addEventListener("load", () => console.log("Window loaded"));
+    window.addEventListener("resize", () => console.log("Window resized"));
+    window.addEventListener("scroll", () => console.log("Page scrolled"));
+
+    // Touch Events
+    const touchBox = document.getElementById("touchBox");
+    touchBox.addEventListener("touchstart", () => console.log("Touch Start"));
+    touchBox.addEventListener("touchend", () => console.log("Touch End"));
+
+    // Drag and Drop Events
+    const dragItem = document.getElementById("dragItem");
+    const dropZone = document.getElementById("dropZone");
+
+    dragItem.addEventListener("dragstart", () => console.log("Drag Started"));
+    dropZone.addEventListener("dragover", (e) => e.preventDefault());
+    dropZone.addEventListener("drop", () => console.log("Dropped!"));
+
+    // Media Events
+    const video = document.getElementById("video");
+    video.addEventListener("play", () => console.log("Video playing"));
+    video.addEventListener("pause", () => console.log("Video paused"));
+    video.addEventListener("ended", () => console.log("Video ended"));
+
+    // Focus Events
+    const focusInput = document.getElementById("focusInput");
+    focusInput.addEventListener("focus", () => console.log("Input focused"));
+    focusInput.addEventListener("blur", () => console.log("Input lost focus"));
+
+    // Animation / Transition Events
+    const animateBox = document.getElementById("animateBox");
+    animateBox.addEventListener("transitionend", () => console.log("Transition Ended"));
+    animateBox.addEventListener("mouseover", () => animateBox.style.width = "200px");
+    animateBox.addEventListener("mouseout", () => animateBox.style.width = "100px");
+
+    // Miscellaneous Events
+    window.addEventListener("error", (e) => console.error("Error occurred:", e.message));
+    window.addEventListener("wheel", () => console.log("Mouse wheel used"));
+  </script>
+</body>
+</html>
