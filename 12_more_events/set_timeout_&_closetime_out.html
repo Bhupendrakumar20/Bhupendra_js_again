@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timeouts</title>
+</head>
+<body>
+    <h1>JavaScript setTimeout and clearTimeout Example</h1>
+    <p>This example demonstrates how to use setTimeout to delay the execution of a function and clearTimeout to cancel it before it executes.</p>
+    <button id="startTimeout">Start Timeout</button>
+    <button id="clearTimeout">Clear Timeout</button>
+    <p id="message"></p>
+    <script>
+        let timeoutId;
+
+        document.getElementById('startTimeout').addEventListener('click', function() {
+            // Clear any existing timeout
+            clearTimeout(timeoutId);
+            // Set a new timeout
+            timeoutId = setTimeout(function() {
+                document.getElementById('message').textContent = 'Timeout executed after 3 seconds!';
+            }, 3000);
+        });
+
+        document.getElementById('clearTimeout').addEventListener('click', function() {
+            clearTimeout(timeoutId);
+            document.getElementById('message').textContent = 'Timeout cleared!';
+        });
+    </script>
+</body>
+</html>
