@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript setInterval and clearInterval Example</h1>
+    <p>This example demonstrates how to use setInterval to repeatedly execute a function at specified intervals and clearInterval to stop it.</p>
+    <button id="startInterval">Start Interval</button>
+    <button id="clearInterval">Clear Interval</button>
+    <p id="message"></p>
+    <script>
+        let intervalId;
+
+        document.getElementById('startInterval').addEventListener('click', function() {
+            // Clear any existing interval
+            clearInterval(intervalId);
+
+            // Set a new interval
+            intervalId = setInterval(function() {
+                const currentTime = new Date().toLocaleTimeString();
+                document.getElementById('message').textContent = `Current time: ${currentTime}`;
+            }, 1000); // Update every second
+        });
+
+        document.getElementById('clearInterval').addEventListener('click', function() {
+            clearInterval(intervalId);
+            document.getElementById('message').textContent = 'Interval cleared!';
+        });
+    </script>
+</p>
+</body>
+</html>
