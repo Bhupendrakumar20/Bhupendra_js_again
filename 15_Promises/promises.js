@@ -92,7 +92,6 @@ async function fetchData() {
     }
 }
 
-
 fetchData();
 
 
