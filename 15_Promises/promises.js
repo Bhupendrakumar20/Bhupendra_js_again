@@ -93,8 +93,3 @@ async function fetchData() {
 }
  
 fetchData(); 
-
-
-
-
-
