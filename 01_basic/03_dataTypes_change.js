@@ -40,8 +40,9 @@ let str3=str1+str2; // string concatenation (joining two strings)
 console.log(str3); // "helloworld"
 console.log(str3.length); // 10 (length of string)
 console.log(str3.charAt(0)); // "h" (first character of string)
+console.log(str3[0]);
 
-comsole.log(1+2+"3"); // "33" (string concatenation)
+console.log(1+2+"3"); // "33" (string concatenation)
 console.log(1+"2"+3); // "123" (string concatenation)
 console.log("1"+2+3); // "123" (string concatenation)
 console.log(1+2+"3"+4); // "334" (string concatenation)

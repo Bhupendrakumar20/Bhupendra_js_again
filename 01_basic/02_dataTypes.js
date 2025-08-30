@@ -63,6 +63,7 @@ console.log(obj); // { name: "John", age: 30 }
 console.log(obj.name); // John
 console.log(obj["age"]); // 30
 console.log(obj["name"]); // John
+console.log(obj.age); // 30
 
 //fucntion:
 function add(a, b) {
