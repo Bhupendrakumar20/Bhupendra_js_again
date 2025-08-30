@@ -13,10 +13,12 @@ let accountemail = "Bhupendra@google.com"; // let is block scoped
 // accountId = 1234567891; // this will throw an error because accountId is a constant and cannot be changed
 
 accountPassword = "54321";
-accountemail = "Bhupendra@microsoft,com";
+accountemail = "Bhupendra@microsoft.com";
 console.log(accountId); // 1234567890
 console.log(accountPassword); // 54321
 console.log(accountemail); // Bhupendra@microsoft,com
+
+// accountId = 1234567891; // this will throw an error because accountId is a constant and cannot be changed
 
 
 //print the file ...simply write the node FULLDIRECTORY
