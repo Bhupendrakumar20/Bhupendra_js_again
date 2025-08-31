@@ -52,6 +52,15 @@ const merged_person = Object.assign({}, person3, person4) // it merges the two o
 console.log(merged_person); // { name: 'Jane', age: 25, city: 'Los Angeles' }  it returns the object with the properties of both objects
 
 
+
+//another way to merge the two objects using the spread operator
+const merged_person2 = { ...person3, ...person4 } // it merges the two objects and returns a new object
+console.log(merged_person2); // { name: 'Jane', age: 25, city: 'Los Angeles' }  it returns the object with the properties of both objects
+
+
+
+
+
 //use of object.keys() method
 const keys = Object.keys(person3) // it returns the keys of the object as an array
 console.log(keys); // [ 'name', 'age', 'city' ]  it returns the keys of the object as an array

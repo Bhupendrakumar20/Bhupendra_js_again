@@ -2,6 +2,8 @@
 // while creating the object we can use the new keyword or we can use the object literal notation
 //while using the constructor function we get the singleton object
 
+//what is singleton object?
+//A singleton object is an object that can only have one instance. It is used to create a single instance of a class and provide a global point of access to it.
 
 
 const person = {

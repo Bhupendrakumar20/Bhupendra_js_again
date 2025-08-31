@@ -4,10 +4,16 @@ const dc_characters = ["superman", "batman", "Flash", "wonder"];
 marvel_characters.push(dc_characters)
 
 console.log(marvel_characters); // [ 'thor', 'ironman', 'hulk', 'spiderman', 'black widow', [ 'superman', 'batman', 'Flash', 'wonder' ] ]
+console.log(marvel_characters[5]); 
 
 //it is adding the dc_characters array to the marvel_characters array as a single element
 //it is not merging the two arrays
 
+let another_merge = marvel_characters + dc_characters ;
+console.log(another_merge); // thor,ironman,hulk,spiderman,black widow,superman,batman,Flash,wonder
+//it is converting both arrays to strings and then concatenating them
+//it is not merging the two arrays
+//it is creating a new string with the elements of both arrays
 
 
 //using concat method to merge the two arrays

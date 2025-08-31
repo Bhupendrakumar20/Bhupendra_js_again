@@ -1,4 +1,4 @@
-const a =500
+const a = 500
 console.log(a);
 
 const b = new Number(a) // Number object is created using the Number constructor
@@ -27,7 +27,7 @@ console.log(tolocaleString(1234567890)); // 1,234,567,890  it returns a string w
 
 // +++++++++++++++++++++++++++++++++++++++++MATHS+++++++++++++++++++++++++++++++++++++++++++++
 
-console.log(maths)    //  [Function: Math]  it returns the Math object
+// console.log(maths)    //  [Function: Math]  it returns the Math object
 console.log(Math.abs(-5)); // 5  it returns the absolute value of -5
 console.log(Math.ceil(5.1)); // 6  it returns the smallest integer greater than or equal to 5.1
 console.log(Math.floor(5.9)); // 5  it returns the largest integer less than or equal to 5.9
