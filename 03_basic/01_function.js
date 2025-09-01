@@ -1,7 +1,7 @@
 //function in javascript
 // function declaration
 function greet(name) {
-    console.log("Hello, " + name + "!");
+    console.log(`Hello ${name} !`);
 }
 greet("Alice"); // Output: Hello, Alice!
 
@@ -24,6 +24,11 @@ const greet3 = (name) => {
 greet3("Charlie"); // Output: Hello, Charlie!
 
 
+const greeting = (name="Bhupendra") => {
+    return `hello ${name}`;
+}
+
+console.log(greeting());
 
 
 // function with default parameters
@@ -50,6 +55,17 @@ greet5("Eve", "Frank", "Grace"); // Output: Hello, Eve! Hello, Frank! Hello, Gra
 
 // function with spread operator
 function greet6(...names) {
-    const greeting = names.map(name => "Hello, " + name + "!").join(" ");
+    const greeting = names.map(name =>  "Hello, " + name + "!").join("--------");
     console.log(greeting);
 }
+greet6("Hank", "Ivy", "Jack"); // Output: Hello, Hank! Hello, Ivy! Hello, Jack!
+
+
+
+function greet7(...names){
+    let greeting = names.map(name => `hello ${name}`).join("-------");
+    console.log(greeting) ;
+}
+
+greet7("bhupendra","rahul","sachin");
+

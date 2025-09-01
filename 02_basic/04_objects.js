@@ -74,3 +74,5 @@ console.log(values); // [ 'John', 30, 'New York' ]  it returns the values of the
 //use of object.entries() method
 const entries = Object.entries(person3) // it returns the entries of the object as an array of arrays
 console.log(entries); // [ [ 'name', 'John' ], [ 'age', 30 ], [ 'city', 'New York' ] ]  it returns the entries of the object as an array of arrays
+
+console.log(Object.values(person3).includes("John")); // true  it returns true because the values method is not a function of the object constructor
